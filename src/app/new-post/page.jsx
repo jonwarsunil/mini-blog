@@ -12,7 +12,7 @@ export default function NewPostPage() {
   const handleSubmit = async e => {
     e.preventDefault();
     const createdAt = new Date().toISOString();
-    const res = await fetch('http://localhost:3000/api/posts', {
+    const res = await fetch('/api/posts', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ title, body, createdAt }),

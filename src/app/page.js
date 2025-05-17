@@ -3,7 +3,8 @@ import BlogCard from '../components/BlogCard.jsx';
 export const dynamic = 'force-dynamic';
 
 export default async function Home() {
-  const res = await fetch(`http://localhost:3000/api/posts`, {
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
+  const res = await fetch(`${baseUrl}/api/posts`, {
     cache: 'no-store',
   });
 

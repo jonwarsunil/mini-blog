@@ -12,7 +12,7 @@ const BlogCard = ({ tags, title, views, reactions, id, createdAt }) => {
       />
       <div className='p-4 flex flex-col justify-between flex-grow'>
         <h3 className='text-lg font-semibold text-gray-500'>{title}</h3>
-        <p className='text-xs text-gray-400 mt-1'>Published on {formatDate(createdAt)}</p>
+        <p className='text-xBlogCards text-gray-400 mt-1'>Published on {formatDate(createdAt)}</p>
         <div className='flex items-center gap-4 mt-3 text-gray-600 text-sm'>
           <div className='flex items-center gap-1'>
             <EyeIcon />

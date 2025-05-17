@@ -1,24 +1,25 @@
 import Button from '../../../components/Button';
 import ServerTimePage from '../../../components/serverTimer';
 import { formatDate } from '../../../utils/formatDate';
-import { posts } from '../../../../data/post.js';
-
-export async function generateStaticParams() {
-  return posts.map(post => ({
-    slug: post.slug,
-  }));
-}
 
 export default async function PostPage({ params }) {
-  const post = posts.find(p => p.slug === params.slug);
+  const { slug } = await params;
 
-  if (!post) {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/posts`, {
+    cache: 'no-store',
+  });
+
+  if (!res.ok) {
     return (
       <div className='flex text-lg flex-col justify-center items-center h-screen'>
-        Post not found. <Button label='← Go Home' href='/' className='mt-4' />
+        Failed to fetch post data.
+        <Button label='← Go Home' href='/' className='mt-4' />
       </div>
     );
   }
+
+  const { posts } = await res.json();
+  const post = posts.find(p => p.slug === slug);
 
   return (
     <div className='container'>

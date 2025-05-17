@@ -1,5 +1,3 @@
-// components/Icons.jsx
-
 export const EyeIcon = ({ className = 'w-5 h-5 text-gray-500' }) => (
   <svg
     xmlns='http://www.w3.org/2000/svg'
