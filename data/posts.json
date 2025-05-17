@@ -1,0 +1,20 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "slug": "my-first-post",
+      "title": "My First Post",
+      "body": "This is the body of the first post.",
+      "createdAt": "2025-05-16T00:00:00Z",
+      "tags": ["nextjs", "blog"]
+    },
+    {
+      "id": 2,
+      "slug": "another-article",
+      "title": "Another Article",
+      "body": "More content in this post.",
+      "createdAt": "2025-05-15T00:00:00Z",
+      "tags": ["tips", "webdev"]
+    }
+  ]
+}
