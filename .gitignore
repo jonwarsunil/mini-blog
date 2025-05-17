@@ -16,6 +16,7 @@
 *.tsbuildinfo
 
 .vscode/settings.json
+.next
 
 # Logs
 logs

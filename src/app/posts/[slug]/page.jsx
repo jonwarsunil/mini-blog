@@ -1,10 +1,12 @@
-// src/app/posts/[slug]/page.jsx
 import ServerTimePage from '../../../components/serverTimer';
 import Button from '../../../components/Button';
 import { formatDate } from '../../../utils/formatDate';
 
 export default async function PostPage({ params }) {
-  const res = await fetch('http://localhost:3000/api/posts');
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://your-vercel-url.vercel.app';
+  const res = await fetch(`${baseUrl}/api/posts`);
+
+  // const res = await fetch('http://localhost:3000/api/posts');
   const data = await res.json();
 
   const post = data.posts.find(p => p.slug === params?.slug);
